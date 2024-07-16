@@ -78,7 +78,7 @@ if not st.session_state.answer_submitted:
 if st.session_state.answer_submitted:
     correct_answer = str(current_item['number'])
     if st.session_state.user_input == correct_answer:
-        st.success(f"{st.session_state.user_input} est la bonne réponse! Gg mon nword!")
+        st.success(f"{st.session_state.user_input} est la bonne réponse! Gg!")
     else:
         st.error(f"{st.session_state.user_input} n'est pas la bonne réponse. La réponse est {correct_answer}. Trolleur.")
     if st.session_state.current_index < len(st.session_state.shuffled_data) - 1:
