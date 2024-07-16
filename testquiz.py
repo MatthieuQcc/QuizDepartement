@@ -50,7 +50,7 @@ def submit_answer():
         correct_answer_normalized = str(st.session_state.shuffled_data[st.session_state.current_index]['number']).strip().lower()
         # Special handling for Corsican departments
         if user_input_normalized.lstrip('0') == correct_answer_normalized.lstrip('0'):
-            st.session_state.score += 10
+            st.session_state.score += 1
     else:
         # If no input, show a message and do not mark as submitted
         st.warning("Entrez un numéro avant de valider...")
