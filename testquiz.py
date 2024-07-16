@@ -83,7 +83,7 @@ if st.session_state.answer_submitted:
     correct_answer = str(current_item['number']).strip().lower()
     user_input_normalized = st.session_state.user_input.strip().lower()
     if user_input_normalized.lstrip('0') == correct_answer.lstrip('0'):
-        st.success(f"{st.session_state.user_input} est la bonne réponse! Gg!")
+        st.success(f"{st.session_state.user_input} est la bonne réponse! GG!")
     else:
         st.error(f"{st.session_state.user_input} n'est pas la bonne réponse. La réponse est {correct_answer}. Trolleur.")
     if st.session_state.current_index < len(st.session_state.shuffled_data) - 1:
