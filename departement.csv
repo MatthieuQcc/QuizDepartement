@@ -93,5 +93,11 @@ N°,Département,Chef-lieu/préfecture,Région administrative
 91,Essonne ,Évry ,Île-de-France  
 92,Hauts-de-Seine ,Nanterre ,Île-de-France  
 93,Seine-Saint-Denis ,Bobigny ,Île-de-France  
-94,Val-de-Marne ,Créteil ,Île-de-France  
-95,Val-d'Oise ,Pontoise ,Île-de-France  
+94,Val-de-Marne ,Créteil ,Île-de-France
+95,Val-d'Oise ,Pontoise ,Île-de-France
+971,Guadeloupe ,Basse-Terre ,Département d'outre-mer
+972,Martinique ,Fort-de-France ,Département d'outre-mer 
+973,Guyanne ,Cayenne ,Département d'outre-mer 
+974,La Réunion ,Saint-Denis ,Département d'outre-mer 
+975,Saint-Pierre-et-Miquelon ,Saint-Pierre ,Collectivité d'outre-mer
+976,Mayotte ,Mamoudzou ,Département d'outre-mer
