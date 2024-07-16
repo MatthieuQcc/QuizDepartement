@@ -41,16 +41,20 @@ def restart_quiz():
     st.session_state.shuffled_data = random.sample(departments_data, len(departments_data))
 
 def submit_answer():
-    # Check if an input has been provided
+     # Check if an input has been provided
     if st.session_state.user_input:
         # Mark the answer as submitted
         st.session_state.answer_submitted = True
-        # Check if the input is correct
-        if st.session_state.user_input == str(st.session_state.shuffled_data[st.session_state.current_index]['number']):
-            st.session_state.score += 1
+        # Normalize user input and correct answer for comparison
+        user_input_normalized = st.session_state.user_input.strip().lower()
+        correct_answer_normalized = str(st.session_state.shuffled_data[st.session_state.current_index]['number']).strip().lower()
+        # Special handling for Corsican departments
+        if user_input_normalized.lstrip('0') == correct_answer_normalized.lstrip('0'):
+            st.session_state.score += 10
     else:
         # If no input, show a message and do not mark as submitted
         st.warning("Entrez un numéro avant de valider...")
+
 
 def next_question():
     st.session_state.current_index += 1
@@ -76,8 +80,9 @@ if not st.session_state.answer_submitted:
 
 # Submission button and response logic
 if st.session_state.answer_submitted:
-    correct_answer = str(current_item['number'])
-    if st.session_state.user_input == correct_answer:
+    correct_answer = str(current_item['number']).strip().lower()
+    user_input_normalized = st.session_state.user_input.strip().lower()
+    if user_input_normalized.lstrip('0') == correct_answer.lstrip('0'):
         st.success(f"{st.session_state.user_input} est la bonne réponse! Gg!")
     else:
         st.error(f"{st.session_state.user_input} n'est pas la bonne réponse. La réponse est {correct_answer}. Trolleur.")
